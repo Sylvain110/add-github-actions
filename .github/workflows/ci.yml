@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.8
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v3 #1
       with:
         python-version: 3.8
     - name: Install dependencies
@@ -27,7 +27,7 @@ jobs:
         make format
     - uses: actions/cache@v3
       with:
-        path: C:\Users\Sylvain\AppData\Local\pip\cache
+        path: ~\AppData\Local\pip\Cache
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
