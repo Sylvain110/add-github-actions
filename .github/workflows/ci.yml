@@ -13,7 +13,6 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.8
-        cache: pip 
     - name: Install dependencies
       run: |
         make install
@@ -28,7 +27,7 @@ jobs:
         make format
     - uses: actions/cache@v3
       with:
-        path: /%LocalAppData%\pip\Cache
+        path: C:\Users\Sylvain\AppData\Local\pip\cache
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
