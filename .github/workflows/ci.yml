@@ -9,10 +9,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.8
+    - name: Set up Python 3.10
       uses: actions/setup-python@v1
       with:
-        python-version: 3.8
+        python-version: 3.10
         cache: pip 
     - name: Install dependencies
       run: |
@@ -28,7 +28,7 @@ jobs:
         make format
     - uses: actions/cache@v3
       with:
-        path: ~\AppData\Local\pip\Cache
+        path: /%LocalAppData%\pip\Cache
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
